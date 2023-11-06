@@ -2,15 +2,7 @@
 
 from odoo import models, fields, api
 
-# class wsem_sii_oca(models.Model):
-#     _name = 'wsem_sii_oca.wsem_sii_oca'
-#     _description = 'wsem_sii_oca.wsem_sii_oca'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
 #     @api.depends('value')
 #     def _value_pc(self):
 #         for record in self:
