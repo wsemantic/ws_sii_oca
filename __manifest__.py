@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "wsem_sii_oca",
+    'name': "ws_sii_oca",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
