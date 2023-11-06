@@ -16,8 +16,8 @@ from odoo import models, fields, api
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
-class AccountMove(models.Model):
-    _inherit = 'account.move'
+class SiiMixin(models.Model):
+    _inherit = 'sii.mixin'
 
     def _get_sii_identifier(self):
         gen_type = self._get_sii_gen_type()
@@ -37,12 +37,10 @@ class AccountMove(models.Model):
             return {
                     "IDOtro": {
                         "CodigoPais": country_code,
-                        "IDType": "04",
+                        "IDType": identifier_type,
                         "ID": country_code + identifier
-                        if self.commercial_partner_id._map_aeat_country_code(
-                            country_code
-                        )
-                        in self.commercial_partner_id._get_aeat_europe_codes()
+                        if self._sii_get_partner()._map_aeat_country_code(country_code)
+                        in self._sii_get_partner()._get_aeat_europe_codes()
                         else identifier,
                     },
                 }
