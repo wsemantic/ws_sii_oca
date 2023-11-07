@@ -8,7 +8,7 @@ from odoo import models, fields, api
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
-class SiiMixin(models.Model):
+class SiiMixin(models.AbstractModel):
     _inherit = 'sii.mixin'
 
     def _get_sii_identifier(self):
