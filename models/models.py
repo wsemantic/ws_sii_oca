@@ -26,7 +26,8 @@ class SiiMixin(models.AbstractModel):
             identifier_type = "06"
 
         # Comprobación para el caso de país europeo pero fiscal position "Nacional"
-        if gen_type == 1 and self.fiscal_position_id.name=="Régimen Nacional" and country_code!='ES' and "1117" not in (self.sii_send_error or ""):        
+        if gen_type == 1 and self.fiscal_position_id.name=="Régimen Nacional" and country_code!='ES' and "1117" not in (self.sii_send_error or ""): 
+            identifier_type = "04"
             return {
                     "IDOtro": {
                         "CodigoPais": country_code,
